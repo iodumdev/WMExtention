@@ -8,7 +8,7 @@ static void (*wm_sample_event)();
 
 // crypto data
 static volatile unsigned char wm_rand[10];
-static unsigned char wm_key[6];
+static volatile unsigned char wm_key[6];
 static volatile unsigned char wm_ft[8];
 static volatile unsigned char wm_sb[8];
 
@@ -90,7 +90,7 @@ void wm_gentabs()
 		tkey[5] = ((wm_ror8((ans[5] ^ t0[7]), (t0[8] % 8)) - t0[5]) ^ t0[9]);
 
 		// compare with actual key
-		if(memcmp(tkey, wm_key, 6) == 0) break; // if match, then use this idx
+		if(memcmp(tkey, (const void*)wm_key, 6) == 0) break; // if match, then use this idx
 	}
 
 	// generate encryption from idx key and rand
