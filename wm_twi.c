@@ -1,6 +1,5 @@
-#include "Arduino.h"
 
-#include "wiimoteext.h"
+#include "wm_twi.h"
 #include "wm_crypto.h"
 
 // pointer to user function
@@ -13,7 +12,7 @@ static volatile unsigned char wm_ft[8];
 static volatile unsigned char wm_sb[8];
 
 // virtual register
-static unsigned char twi_reg[256];
+volatile unsigned char twi_reg[256];
 static volatile unsigned int twi_reg_addr;
 
 static volatile unsigned char twi_first_addr_flag; // set address flag
@@ -155,19 +154,6 @@ void wm_slaveRx(unsigned char addr, unsigned char l)
 			wm_gentabs();
 		}
 	}
-}
-
-void wm_newaction(unsigned char * d)
-{
-	// load button data from user application
-	
-	memcpy(twi_reg, d, 8);
-}
-
-
-unsigned char wm_get_reg(unsigned char addr){
-	
-	return twi_reg[addr];
 }
 
 void wm_init(unsigned char * id, unsigned char * cal_data, void (*function)(void))

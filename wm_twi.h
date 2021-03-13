@@ -1,4 +1,4 @@
-#ifndef wiimoteext_h
+#ifndef wm_twi_h
 
 #include <string.h>
 #include <avr/io.h>
@@ -15,14 +15,10 @@
 //#define dev_detect_ddr DDRD
 //#define dev_detect_pin 4
 
+extern volatile unsigned char twi_reg[256];
+
 // initialize wiimote interface with id, starting data, and calibration data
 void wm_init(unsigned char *, unsigned char *, void (*)(void));
 
-// set button data
-void wm_newaction(unsigned char *);
-
-// get register data
-unsigned char wm_get_reg(unsigned char);
-
-#define wiimoteext_h
+#define wm_twi_h
 #endif
