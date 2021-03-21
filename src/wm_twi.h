@@ -11,9 +11,9 @@
 #define twi_scl_pin 5
 #define twi_sda_pin 4
 
-//#define dev_detect_port PORTD
-//#define dev_detect_ddr DDRD
-//#define dev_detect_pin 4
+#define dev_detect_port PORTC
+#define dev_detect_ddr DDRC
+#define dev_detect_pin 1
 
 extern volatile unsigned char twi_reg[256];
 
