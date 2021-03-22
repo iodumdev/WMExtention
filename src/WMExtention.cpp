@@ -1,3 +1,8 @@
+/*
+ * Based on https://eleccelerator.com/wiimote-extension-code/
+ * Modified by Iodum https://github.com/iodumdev
+ */
+
 #include "WMExtention.h"
 
 

@@ -1,3 +1,8 @@
+/*
+ * Based on https://eleccelerator.com/wiimote-extension-code/
+ * Modified by Iodum https://github.com/iodumdev
+ */
+
 #ifndef WMExtention_h
 #define WMExtention_h
 
