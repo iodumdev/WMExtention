@@ -6,8 +6,6 @@
 #ifndef WMExtention_h
 #define WMExtention_h
 
-#include "Arduino.h"
-
 extern "C" {
 #include "wm_twi.h"
 }
