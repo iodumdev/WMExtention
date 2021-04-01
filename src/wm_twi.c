@@ -196,6 +196,12 @@ void wm_init(unsigned char * id, unsigned char * cal_data, void (*function)(void
 #endif
 }
 
+void wm_newaction(unsigned char *d)
+{
+    // load button data from user application
+    memcpy((void*)twi_reg, d, 8);
+}
+
 ISR(TWI_vect)
 {
 	switch(TW_STATUS)
